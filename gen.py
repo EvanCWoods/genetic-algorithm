@@ -33,6 +33,7 @@ for i in range(10000):
     print(f"=== Gen {i} best solutions ===")
 
     if rankedSolutions[0][0] > 999:
+        print(foo( rankedSolutions[0][1][0], rankedSolutions[0][1][1], rankedSolutions[0][1][2] ))
         break
     print(rankedSolutions[0])
 
