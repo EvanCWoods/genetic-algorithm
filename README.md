@@ -1,1 +1,3 @@
 # genetic-algorithm
+
+This is a side project where I attempt to create a program that runs a genetic algorithm where I can study the effects of mutations on the evolution of each node in the program and visualize the improved performance, given the variation in mutations. Eventually implamenting some form of graphics engine where a visual demonstration of the evolutionary process can be viewed and better understood.
