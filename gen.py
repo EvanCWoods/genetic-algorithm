@@ -1,11 +1,13 @@
 import random
 
-def foo(x,y,z):
-    return 6*x**3 + 9*y**2 + 90*z -25
+# This function defines the test that is run every iteration of the algorithm to test fitness
+def objective(x,y,z):
+    return 6*x**3 + 9*y**2 + 90*z -25   # The goal is to get the output of this as close to 0 as possible
 
 
+# This function tests the actual fitness of the generation
 def fitness(x,y,z):
-    ans = foo(x,y,z)
+    ans = objective(x,y,z)
 
     if (ans == 0):
         return 99999
@@ -14,7 +16,7 @@ def fitness(x,y,z):
         return abs(1/ans)
 
 solutions = []
-
+# Start the process with some random numbers
 for s in range(1000):
     solutions.append( 
         (random.uniform(0, 10000), 
@@ -22,7 +24,7 @@ for s in range(1000):
         random.uniform(0, 10000)) 
     )
 
-
+# Rank the solutions and run the process until the objective function is met
 for i in range(10000):
     rankedSolutions = [];
     for s in solutions:
@@ -32,8 +34,8 @@ for i in range(10000):
     rankedSolutions.reverse()
     print(f"=== Gen {i} best solutions ===")
 
-    if rankedSolutions[0][0] > 999:
-        print(foo( rankedSolutions[0][1][0], rankedSolutions[0][1][1], rankedSolutions[0][1][2] ))
+    if rankedSolutions[0][0] > 9999:
+        print(objective( rankedSolutions[0][1][0], rankedSolutions[0][1][1], rankedSolutions[0][1][2] ))
         break
     print(rankedSolutions[0])
 
